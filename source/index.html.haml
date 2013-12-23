@@ -1,14 +1,14 @@
 .row
   .small-12.columns
     .example-item
-      %a{:href => "/marketo/landings/one-col/center.html"}
+      = link_to "landings/one-col/center.html" do
         Landing One column Discount
         = image_tag 'examples/landing-center-discount.jpg'
     .example-item
-      %a{:href => "/marketo/landings/two-col/discount.html"}
+      = link_to "landings/two-col/discount.html" do
         Landing Two column Discount
         = image_tag 'examples/landing-discount.jpg'
     .example-item
-      %a{:href => "/marketo/landings/two-col/webinar.html"}
+      = link_to "landings/two-col/webinar.html" do
         Landing Webinar
         = image_tag 'examples/landing-webinar.jpg'
