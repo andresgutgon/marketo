@@ -8708,9 +8708,10 @@ footer {
     color: #888888; }
   /* line 32, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
   .profile-item-name a, .profile-item-name a:hover {
-    display: block; }
+    display: block;
+    text-decoration: underline; }
 
-/* line 34, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
+/* line 35, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
 .profile-item-desc,
 .profile-item-desc p {
   margin: 0;
