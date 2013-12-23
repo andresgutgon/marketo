@@ -8511,23 +8511,27 @@ body {
   background-image: url("../images/mkt-bg.jpg");
   background-repeat: repeat-x;
   padding-bottom: 20px; }
+  /* line 16, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
+  .main p {
+    font-size: 13px;
+    line-height: 1.8; }
 
-/* line 17, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
+/* line 20, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
 footer {
   border-top: 1px solid #ebebeb;
   padding: 15px 0;
   text-align: center; }
-  /* line 21, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
+  /* line 24, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
   footer p {
     color: #888888;
     margin-bottom: 0.2em;
     font-size: 12px; }
 
-/* line 26, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
+/* line 29, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
 .call-to-action-wrapper {
   text-align: center; }
 
-/* line 30, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
+/* line 33, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
 .example-home-link, .example-home-link:hover {
   font-style: 11px;
   color: #333333;
@@ -8535,14 +8539,14 @@ footer {
   padding: 10px 0;
   border-bottom: 1px solid white; }
 
-/* line 36, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
+/* line 39, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
 .example-item {
   display: inline-block;
   width: 33%;
   margin: 0;
   text-align: center;
   vertical-align: top; }
-  /* line 42, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
+  /* line 45, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
   .example-item a, .example-item a:hover {
     padding: 10px 0;
     text-align: center;
@@ -8550,12 +8554,12 @@ footer {
     color: #333333;
     font-weight: 600;
     text-decoration: underline; }
-  /* line 50, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
+  /* line 53, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
   .example-item img {
     display: inline-block; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 57, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
+  /* line 60, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
   header .web-logo {
     background-image: url("../images/rb-logo@2x.png"); } }
 /* line 2, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
@@ -8597,64 +8601,62 @@ footer {
   /* line 23, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box-content p {
     color: #ad9f92;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
     text-align: center; }
-    /* line 28, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+    /* line 26, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
     .register-box-content p a, .register-box-content p a:hover {
       color: #ad9f92;
       text-transform: underline; }
-  /* line 31, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 29, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box-content select,
   .register-box-content select,
   .register-box-content textarea {
     width: auto; }
-  /* line 35, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 33, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box-content input[type="text"],
   .register-box-content select,
   .register-box-content textarea {
     margin-bottom: 0.8em; }
-  /* line 39, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 37, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box-content select {
     display: block; }
-  /* line 42, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 40, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box-content .form-unit input[type="text"] {
     display: inline-block;
     max-width: 260px; }
-  /* line 45, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 43, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box-content .button {
     width: 260px; }
 
-/* line 49, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+/* line 47, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
 .register-box-code input[type="text"] {
   text-transform: uppercase;
   background-color: #eeeeee; }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 60, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 58, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .mkt-sidebar .register-box,
   .mkt-sidebar .register-box--dark {
     background-color: white; }
 
-  /* line 64, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 62, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box-content p {
     text-align: left; }
-  /* line 67, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 65, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box-content .form-unit input[type="text"] {
     display: block;
     max-width: auto; }
-  /* line 70, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 68, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box-content .button {
     width: 100%; }
 
-  /* line 73, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 71, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box--always-center p {
     text-align: center; }
-  /* line 76, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 74, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box--always-center .form-unit input[type="text"] {
     display: inline-block;
     max-width: 260px; }
-  /* line 79, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
+  /* line 77, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
   .register-box--always-center .button {
     width: 260px; } }
 /* line 2, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
@@ -8663,20 +8665,21 @@ footer {
   /* line 4, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
   .profile-list h4 {
     color: #333333;
-    font-weight: 600; }
+    font-weight: 600;
+    margin-bottom: 1em; }
 
-/* line 7, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
+/* line 8, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
 .profile-item {
   margin-bottom: 2em; }
 
-/* line 9, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
+/* line 10, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
 .profile-item-info {
   padding-left: 80px;
   margin-bottom: 0.8em;
   position: relative;
   min-height: 70px; }
 
-/* line 14, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
+/* line 15, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
 .profile-item-avatar {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
@@ -8687,27 +8690,27 @@ footer {
   position: absolute;
   left: 0;
   top: 0; }
-  /* line 20, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
+  /* line 21, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
   .profile-item-avatar img {
     max-width: 70px;
     max-height: 70px;
     display: block; }
 
-/* line 24, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
+/* line 25, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
 .profile-item-name {
   padding-top: 10px; }
-  /* line 26, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
+  /* line 27, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
   .profile-item-name a, .profile-item-name a:hover,
   .profile-item-name span {
     font-size: 16px; }
-  /* line 29, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
+  /* line 30, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
   .profile-item-name span {
     color: #888888; }
-  /* line 31, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
+  /* line 32, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
   .profile-item-name a, .profile-item-name a:hover {
     display: block; }
 
-/* line 33, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
+/* line 34, /Users/rbd/code/marketo/source/stylesheets/marketo/_profile.sass */
 .profile-item-desc,
 .profile-item-desc p {
   margin: 0;
