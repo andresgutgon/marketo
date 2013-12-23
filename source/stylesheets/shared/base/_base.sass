@@ -1,0 +1,59 @@
+@import "compass/utilities/general/clearfix"
+@import "compass/css3/box-sizing"
+
+*
+  +box-sizing(border-box)
+  +selection
+    color: white
+    background: $brand-blue-4
+body
+  color: $brand-grey-1
+  background-color: black(0.8)
+
+input, button, textarea
+  font-family: inherit
+  font-size: 100%
+  margin: 0
+  padding: 0
+
+body, input, select, textarea, button
+  font: 13px/1.4 $typeface
+
+img
+  border: none
+
+table
+  border-collapse: collapse
+  clear: both
+  font-size: 1em
+  border: 1px solid $brand-grey-7
+  th
+    text-align: left
+    font-weight: normal
+  td
+    vertical-align: top
+
+fieldset
+  margin: 0
+  padding: 0
+  border: 0
+  legend
+    font-weight: bold
+ul
+  padding: 0
+  margin: 0
+  li
+    list-style: none
+
+dl dt
+  font-weight: normal
+dd
+  margin-left: 1em
+
+hr
+  display: block
+  height: 1px
+  border: 0
+  border-top: 1px solid $brand-grey-5
+
+

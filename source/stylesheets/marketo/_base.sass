@@ -1,0 +1,33 @@
+header
+  padding: $space_zeta_byte 0
+  .web-logo
+    background-image: image-url("rb-logo.png")
+    background-repeat: no-repeat
+    background-size: 190px 48px
+    min-height: 50px
+    display: block
+body
+  background-color: $brand-lighterGrey
+.main
+  background-color: white
+  background-image: image-url("mkt-bg.jpg")
+  background-repeat: repeat-x
+  padding-bottom: $space_giga_byte
+
+footer
+  border-top: 1px solid $brand-grey-7
+  padding: $space_mega_byte 0
+  text-align: center
+  p
+    color: $brand-grey-4
+    margin-bottom: 0.2em
+    font-size: 12px
+
+.call-to-action-wrapper
+  text-align: center
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+  header
+    .web-logo
+      background-image: image-url("rb-logo@2x.png")

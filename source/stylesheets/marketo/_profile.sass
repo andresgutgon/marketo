@@ -1,0 +1,38 @@
+$profile_image: 70px
+.profile-list
+  margin-top: $space_giga_byte
+  h4
+    color: $brand-grey-1
+    font-weight: $open_sans_weight_semi_bold
+.profile-item
+  margin-bottom: 2em
+.profile-item-info
+  padding-left: $profile_image + 10px
+  margin-bottom: 0.8em
+  position: relative
+  min-height: $profile_image
+.profile-item-avatar
+  +border-radius(100px)
+  overflow: hidden
+  position: absolute
+  left: 0
+  top: 0
+  img
+    max-width: $profile_image
+    max-height: $profile_image
+    display: block
+.profile-item-name
+  padding-top: $space_kilo_byte
+  a, a:hover,
+  span
+    font-size: $font_size_medium
+  span
+    color: $brand-grey-4
+  a, a:hover
+    display: block
+.profile-item-desc,
+.profile-item-desc p
+  margin: 0
+  font-size: 12px
+  line-height: 1.6
+  color: $brand-grey-4

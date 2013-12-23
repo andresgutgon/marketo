@@ -1,0 +1,71 @@
+$small_input_width: 240px
+.register-box
+  background-color: white
+  +border-radius(6px)
+.register-box--dark
+  background-color: $brand-lighterGrey
+.register-box--not-centered
+  .register-box-content
+    text-align: left
+
+.register-box-header
+  +border-top-left-radius(6px)
+  +border-top-right-radius(6px)
+  background-color: $brand-blue-4
+  color: white
+  text-align: center
+  font-size: $font_size_medium
+  font-weight: $open_sans_weight_semi_bold
+  padding: $space_mega_byte 0
+.register-box-content
+  padding: $space_giga_byte
+  text-align: center
+  p
+    color: $brand-brown-2
+    font-family: $typeface_plain
+    font-size: 12px
+    text-align: center
+    a, a:hover
+      color: $brand-brown-2
+      text-transform: underline
+  select,
+  select,
+  textarea
+    width: auto
+  input[type="text"],
+  select,
+  textarea
+    margin-bottom: 0.8em
+  select
+    display: block
+  .form-unit
+    input[type="text"]
+      display: inline-block
+      max-width: $small_input_width
+  .button
+    width:  $small_input_width
+
+.register-box-code
+  input[type="text"]
+    text-transform: uppercase
+    background-color: $brand-grey-10
+
+
+// @media only screen and (max-width: 40em) { } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+// Medium screens
+// min-width 641px, medium screens
+@media only screen and (min-width: 40.063em)
+  .mkt-sidebar
+    .register-box,
+    .register-box--dark
+      background-color: white
+  .register-box-content
+    p
+      text-align: left
+    .form-unit
+      input[type="text"]
+        display: block
+        max-width: auto
+    .button
+      width: 100%

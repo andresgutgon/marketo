@@ -1,0 +1,119 @@
+@import "compass/css3"
+
+=triangle($size, $color, $direction)
+  display: block
+  height: 0
+  width: 0
+  border: $size/2 solid transparent
+  @if $direction == 'top'
+    border-bottom-color: $color
+  @if $direction == 'bottom'
+    border-top-color: $color
+  @if $direction == 'left'
+    border-right-color: $color
+  @if $direction == 'right'
+    border-left-color: $color
+  @if $direction == 'top-right'
+    border-top-color: $color
+    border-right-color: $color
+  @if $direction == 'top-left'
+    border-top-color: $color
+    border-left-color: $color
+
+=tag($bg_color, $border_color :"", $text_color:"")
+  $bc : $bg_color
+  $tc : white
+
+  @if $border_color != ""
+    $bc : $border_color
+  @if $text_color != ""
+    $tc : $text_color
+
+  background-color: $bg_color
+  border-color: $bc
+  color: $tc
+  &:hover
+    color: $tc
+
+// Mixin to make css ellipsis in one line text
+//
+// $no-wrap - Wrap or no wrap, that's the question
+//
+// Compatible in IE9+, Firefox 4+, Safari 4+.
+=ellipsis($no-wrap: true, $apply : true)
+  @if $apply
+    @if $no-wrap
+      white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+  @else
+    white-space: normal
+    overflow: visible
+
+
+// Function to return  black color with opacity
+// Ex.: background-color: black(0.9)
+//
+// $opacity - The amount of opacity
+//
+// Compatible in IE9+, Firefox 3+, Safari 4+.
+@function black($opacity)
+  @return rgba(0,0,0,$opacity)
+
+// Function to return  white color with opacity
+// Ex.: background-color: white(0.9)
+//
+// $opacity - The amount of opacity
+//
+// Compatible in IE9+, Firefox 3+, Safari 4+.
+@function white($opacity)
+  @return rgba(255,255,255,$opacity)
+
+// Mixin to make cross brosser text selection
+//
+// Compatible in IE9+, Firefox 3+, Safari 4+.
+$prefixes: ("-webkit-","-moz-", "-o-", "")
+=selection()
+  @each $prefix in $prefixes
+    ::#{$prefix}selection
+      @content
+
+// Style the html5 input placeholder in browsers that support it.
+// NOTE: This is a mixins that in the future will go inside Compass.
+// So, we'll remove then.
+// There are two usage modes: at the stylesheet root, include the mixin with
+// styles passed as mixin content. This applies to all elements. For example:
+//
+//     @include input-placeholder {
+//       color: #bfbfbf;
+//       font-style: italic;
+//     }
+//
+// If a specific element is being styled, pass "&" as an argument to the mixin
+// as well. For example:
+//
+//     .textinput {
+//       @include input-placeholder("&") {
+//         color: #bfbfbf;
+//         font-style: italic;
+//       }
+//     }
+// Compatible in IE9+, Firefox 5+, Safari 5+.
+$experimental-support-for-mozilla : true
+$experimental-support-for-webkit : true
+$experimental-support-for-microsoft : true
+=input-placeholder($selector: "")
+  @if $experimental-support-for-webkit
+    #{$selector}::-webkit-input-placeholder
+      @content
+  @if $experimental-support-for-mozilla
+    #{$selector}:-moz-placeholder
+      @content
+  @if $experimental-support-for-microsoft
+    #{$selector}:-ms-input-placeholder
+      @content
+
+
+
+
+

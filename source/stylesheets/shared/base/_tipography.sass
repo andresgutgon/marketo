@@ -1,0 +1,262 @@
+%common_list
+  padding-left: 1em
+  margin-top: 0.5em
+  li
+    color: $brand-grey-2-5
+
+ul ul,
+ol ol,
+ul ol,
+ol ul
+  margin: 2px
+  padding: 0
+  padding-left: 1em
+  border: none
+
+iframe,
+object,
+hr
+  margin-bottom: 15px
+
+b, strong
+  font-weight: $open_sans_weight_bold
+h1
+  font-size: 2.4rem
+  font-weight: $open_sans_weight_semi_bold
+h3, h4, h5, h6
+  color: $brand-grey-3
+
+h3
+  &.subtitle
+    margin-bottom: 1em
+
+p
+  color: $brand-grey-2-5
+  font-weight: $open_sans_weight_light
+  &.text-centered
+    text-align: center
+    img
+      display: inline-block
+      max-height: 100%
+      max-width: 100%
+.small
+  font-size: $fs_small
+  line-height: 18px
+  text-rendering: optimizeLegibility
+
+.disabled
+  color: $brand-grey-4
+.text-hard
+  color: $brand-grey-1
+
+.disabled-light
+  color: $brand-grey-5
+
+.warning
+  color: $brand-red-3
+
+.bold
+  font-weight: $open_sans_weight_bold
+
+.is-selected
+  .disabled
+    color: white
+
+%quotes
+  font-size: $fs_regular
+  color: $brand-grey-4
+
+// Style of a quotes `blockquote` Tis is for a long quotation.
+//
+// Styleguide 6.8.
+blockquote
+  @extend %quotes
+  margin: 0
+  padding-left: 1em
+  border-left: 6px solid $brand-grey-10
+  p
+    color: $brand-grey-4
+
+// Style of a quotes `q`. This quote is for an inline short quotation
+//
+// Styleguide 6.9.
+q
+  @extend %quotes
+
+// Style of `pre` block
+//
+// Styleguide 6.9.1
+pre
+  line-height: 20px
+  background-color: $brand-lighterGrey
+  padding: 14px
+  border-top: 1px solid $brand-grey-6
+  border-bottom: 1px solid $brand-grey-6
+  font-family: $mospace_typeface
+  line-height: 16px
+  color: $brand-grey-2
+  overflow: hidden
+  overflow-y: hidden
+  overflow-x: auto
+  margin: $space_giga_byte 0
+
+a
+  color: $brand-blue-4
+  outline: 0
+  text-decoration: none
+
+  &:hover
+    color: $brand-blue-4
+    text-decoration: none
+
+// `.tb-order-list` Styled order list. User with `<ol>` tags
+//
+// Styleguide 6.10
+ol, .tb-order-list
+  @extend %common_list
+  li
+    list-style-position: inside
+
+// `.tb-unorder-list` Styled unordered list. User with `<ul>` tags
+//
+// Styleguide 6.10.1
+ul, .tb-unorder-list
+  @extend %common_list
+
+// `.alternate-link` To enphatize icon
+//
+// Styleguide 6.9.2
+a.alternate-link
+  color: $brand-grey-3
+  [class^="icon-"],[class*=" icon-"]
+    color: $brand-blue-4
+  &:hover
+    text-decoration: underline
+
+// `.underlined-link` Style our default link with underline
+//
+// Styleguide 6.9.3
+.underlined-link,
+.underlined-link:hover
+  text-decoration: underline
+
+.icon-li-favicon
+  display: inline-block
+  width: 16px
+  height: 16px
+
+// `.icons-ul` This is a class of FontAwesome core. Helpful for List with icons
+//
+// Styleguide 6.10.2
+.icons-ul
+  padding-left: 0
+  > li, > label
+    margin-bottom: 0.5em
+    .icon-li-favicon
+      @extend .icon-li-favicon
+      left: -1.6em
+    input[type=radio].icon-li
+      margin: 4px 0 0 5px
+
+.icons-ul-columns
+  font-size: $fs_regular
+  td
+    padding-top: 20px
+    padding-right: 2%
+    &:first-of-type
+      padding-left: 2%
+  .icons-ul
+    margin-bottom: 20px
+.icons-ul-column-2
+  width: 2%
+.icons-ul-column-30
+  width: 30%
+
+
+= common_table_styles
+  table
+    margin: $space_giga_byte 0
+    border: 0
+    width: 100%
+    td, th
+      padding: $space_kilo_byte
+      border-width: 1px
+      border-style: solid
+      border-color: $brand-grey-9
+      font-size: 12px
+    th,
+    thead td
+      background-color: $brand-lightGrey-2
+
+%code_tag_styles
+  +border-radius(2px)
+  background-color: $brand-grey-6-5
+  border: 1px solid $brand-grey-5
+  display: inline-block
+  padding: 0 10px
+  line-height: inherit
+  font-size: inherit
+  color: inherit
+  margin: 0 3px
+  font-family: $mospace_typeface
+  border-color: $brand-grey-9
+  background-color: $brand-lighterGrey
+  font-size: 12px
+  line-height: 1.65em
+
+
+// `.tb-formated-text` Under this DIV common elements like `table` are specially styled for user use.
+// this styles are shared bettewn webApp and webView on Native Mobile Apps
+//
+// Styleguide 6.11
+.tb-formated-text
+  +common_table_styles
+  b, strong
+    font-weight: 700
+  p
+    line-height: 1.65em
+    word-spacing: 1px
+    color: $brand-grey-1
+    &:empty
+      margin: 0
+    &:not(:empty) ~ p
+      margin: 1.65em 0
+    &:not(:empty)
+      margin: 0 0 1.65em 0
+    &:not(:empty) ~ p:empty
+      margin: 0
+  h2
+    margin-bottom: 0.5em
+    margin-top: 1em
+    font-size: 18px
+  blockquote
+    p
+      color: $brand-grey-4
+
+
+  img
+    max-width: 100%
+    max-height: 350px
+  ul, ol
+    margin-bottom: 1em
+    padding-left: 2em
+    li
+      list-style-position: outside
+      margin-bottom: .4em
+      line-height: 1.65em
+  ul
+    li
+      list-style: disc
+      ul
+        li
+          list-style-type: circle
+          ul, ol
+            li
+              list-style-type: circle
+  code
+    @extend %code_tag_styles
+  pre
+    code
+      border: 0
+      padding: 0
+      line-height: 1.3

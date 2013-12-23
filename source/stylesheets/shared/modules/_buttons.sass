@@ -1,0 +1,457 @@
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
+@import "compass/css3/text-shadow"
+@import "compass/css3/images"
+@import "compass/css3/opacity"
+@import "compass/utilities/general/clearfix"
+
+// Use the standard, but classy, `.button` for form actions and primary page actions.
+// These are used extensively around the site.
+//
+// :hover - Buttons loves hover state
+// .focus - Buttons loves focus state
+// .focus.primary - Focus with primary
+// .focus.danger - Focus with danger
+// .focus.flat - Focus with danger
+// .active - Buttons loves active (:active)
+// :disabled - For when you shouldn't be able to click on it.
+// .disabled - Same as the disabled pseudo-class.
+// .plane - For the main form action, use whenever creating something.
+// .primary - For the main form action, use whenever creating something.
+// .primary:hover - Hover state
+// .primary.active - active state.
+// .primary:disabled - Main button disabled.
+// .primary.disabled - Same that :disabled.
+// .danger - Dangerous actions.
+// .danger:hover - Hover state
+// .danger.active - active state.
+// .danger:disabled - Main button disabled.
+// .danger.disabled - Same that :disabled.
+// .success - Resolve actions.
+// .success:hover - Hover state
+// .success.active - active state.
+// .flat - button without gradient. Flat style.
+// .flat:disabled - Main button disabled.
+// .is-selected - Selected state. This is used when the state is saved in teambox.
+// .is-selected:disabled - Main button selected.
+// .dark - Dark button for darken backgrounds
+// .dark:disabled - Main button selected.
+// .dark.active - Main button selected.
+// .button--no-border - Buttons without borders
+// .button--full-width - Buttons without full width
+// .button--big - Buttons without full width
+//
+// Styleguide 1.1.
+.button, button
+  +teambox_button_base
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  &.primary
+    background-color: $brand-blue-3
+    +background-image(linear-gradient($brand-blue-4, $brand-blue-3))
+    +box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.2))
+    border-color: $brand-blue-0
+    color: white
+    +text-shadow(0 1px 0 $brand-blue-0)
+    span:before
+      +text-shadow(0 -1px 0 $brand-blue-0)
+    .button-icon
+      color: white
+
+  &.primary:hover
+    +background-image(linear-gradient($brand-blue-4, $brand-blue-1))
+    +box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.2))
+    color: white
+    .button-icon
+      color: white
+
+  &.primary:active, &.primary.active,
+  &.primary:active:focus, &.primary.active:focus
+    +active_state_button
+
+  &.danger
+    +background-image(linear-gradient($brand-red-4, $brand-red-3))
+    +box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.2))
+    +text-shadow(0 1px 0 $brand-red-0)
+    background-color: $brand-red-3
+    border-color: $brand-red-1
+    color: white
+    .button-icon
+      color: white
+    span:before
+      +text-shadow(0 -1px 0 $brand-red-0)
+
+  &.danger:hover
+    +background-image(linear-gradient($brand-red-4, $brand-red-1))
+    +box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.2))
+    color: white
+    .button-icon
+      color: white
+
+  &.danger:active, &.danger.active,
+  &.danger:active:focus, &.danger.active:focus
+    +active_state_button
+
+  &.success
+    +text-shadow(0 1px 0 darken($brand-red-1, 50%))
+    +background-image(linear-gradient(lighten($brand-green-1, 10%), $brand-green-1))
+    +box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.2))
+    background-color: $brand-green-1
+    border-color: darken($brand-red-1, 50%)
+    color: white
+    .button-icon
+      color: white
+    span:before
+      +text-shadow(0 -1px 0 $brand-green-1)
+
+  &.success:hover
+    +box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.2))
+    +background-image(linear-gradient(lighten($brand-green-1, 5%), $brand-green-1))
+    color: white
+    .button-icon
+      color: white
+
+  &.success:active, &.success.active,
+  &.success:active:focus, &.success.active:focus
+    +active_state_button
+
+  &.flat
+    background-color: white
+    +text-shadow(0 0px 0 white(0))
+    background-image: none
+    +box-shadow(0 1px 2px rgba(0, 0, 0, 0) inset)
+    color: $brand-grey-3
+    border-color: $brand-grey-5
+    text-transform: none
+  &.flat:hover
+    background-color: $brand-lightGrey-2
+    border-color: $brand-grey-4
+  &.flat:active, &.flat.active,
+  &.flat:active:focus, &.flat.active:focus
+    background-color: $brand-grey-7
+    +active_state_button
+    &:hover
+      border-color: $brand-grey-5
+
+  &.is-selected
+    +text-shadow(0 0px 0 white(0))
+    +box-shadow(0 1px 2px rgba(0, 0, 0, 0.2) inset)
+    background-image: none
+    background-color: $brand-grey-3
+    border-color: $brand-grey-2
+    color: white
+    .button-icon
+      color: white
+  &.is-selected:hover
+    background-color: $brand-grey-3
+    color: white
+    .button-icon
+      color: white
+
+  &.dark
+    +text-shadow(none)
+    +box-shadow(none)
+    background-image: none
+    background-color: $brand-grey-3
+    border-color: $brand-grey-2
+    color: white
+    .button-icon
+      color: white
+  &.dark:hover
+    background-color: $brand-grey-3
+    color: white
+    .button-icon
+      color: white
+
+  &.dark:active, &.dark.active,
+  &.is-selected:active, &.flat.active,
+  &.is-selected:active:focus, &.flat.active:focus
+    background-color: $brand-grey-3
+    +active_state_button
+    &:hover
+      border-color: $brand-grey-3
+
+  &.dark:active, &.dark.active
+    border-color: $brand-grey-2
+    &:hover
+      border-color: $brand-grey-2
+
+  &.dark:disabled,
+  &.dark:disabled:hover,
+  &.dark.disabled,
+  &.dark.disabled:hover,
+  &.is-selected:disabled,
+  &.is-selected:disabled:hover,
+  &.is-selected.disabled,
+  &.is-selected.disabled:hover,
+  &.flat:disabled,
+  &.flat:disabled:hover,
+  &.flat.disabled,
+  &.flat.disabled:hover,
+  &.danger:disabled,
+  &.danger:disabled:hover,
+  &.danger.disabled,
+  &.danger.disabled:hover,
+  &.primary:disabled,
+  &.primary:disabled:hover,
+  &.primary.disabled,
+  &.primary.disabled:hover,
+  &.button-loading-font-face,
+  &.button-loading-font-face:hover
+    +text-shadow(0 0px 0 white(0))
+    +box-shadow(0 0 0 rgba(0, 0, 0, 0))
+    +text-shadow(0 1px 0 white(1))
+    background-color: $brand-grey-9
+    border-color: $brand-grey-5
+    background-image: none
+    cursor: default
+    color: $brand-grey-3
+    .tip-grey
+      display: none !important
+
+  &:focus,&.focus,
+  &:focus:hover,
+  &.selected:focus,
+  &.flat:focus,
+  &.danger:focus,
+  &.primary:focus,
+  &.button-loading-font-face:focus
+    +box-shadow(0 0px 6px rgba($brand-blue-2, 0.6))
+    &:active, &.active
+      +active_state_button
+
+.button--no-border
+  border: 0
+
+.button--transparent
+  background: none
+  border-width: 0
+  text-transform: capitalize
+  color: $brand-grey-2-5
+  font-size: $fs_regular
+  font-weight: normal
+  margin-right: $space_kilo_byte
+  &:hover
+    background: none
+    text-decoration: underline
+  &:focus,
+  &:focus:hover,
+  &:focus:active,
+  &:hover:active,
+  &:focus.active,
+    +box-shadow(none)
+    +text-shadow(none)
+  &.selected
+    border-width: 0
+
+.button--full-width
+  width: 100%
+
+// `.button-middle` Middle buttons are used in pop ups and top bar navigation.
+//
+// Styleguide x.x
+.button--big
+  line-height: 20px
+  font-size: $font_size_medium
+  padding: 10px 12px
+
+// `.button-middle` Middle buttons are used in pop ups and top bar navigation.
+//
+// Styleguide 1.2.
+.button-middle
+  line-height: 16px
+
+// `.button-small` Small buttons are used to be inlined with text like in a task title
+//
+// Styleguide 1.2.1.
+.button-small
+  line-height: 14px
+  padding: 2px 6px
+  font-size: 9px
+
+// `.button-narrow` Lest horizontal padding
+//
+// Styleguide 1.2.2.
+.button-narrow
+  padding-left: 3px
+  padding-right: 3px
+
+// `.button-large` min width larger than normal
+//
+// Styleguide 1.2.2.1
+.button-large
+  min-width: 110px
+
+// `.button-left-aligned` - Button with text left aligned
+//
+// Styleguide 1.2.4.
+.button-left-aligned
+  text-align: left
+
+// Normal buttons with icons.
+//
+// Styleguide 1.3.
+.button-icon
+  display: inline-block
+  margin-right: $space_byte
+  margin-left: 0
+  vertical-align: baseline
+  position: relative
+  top: 1px
+  text-decoration: none
+
+.flat
+  .button-icon
+    color: $brand-grey-3
+
+// `.button-nbr` Buttons with no border radius
+//
+// Styleguide 1.5.
+%button-nbr
+  +border-radius(0)
+.button-nbr
+  @extend %button-nbr
+
+// `.button-nrbr` Buttons with only left border radius
+//
+// Styleguide 1.6.
+%button-nrbr
+  +border-radius(2px 0px 0px 2px)
+.button-nrbr
+  @extend %button-nrbr
+
+// `.button-nlbr` Buttons with only left border radius
+//
+// Styleguide 1.7.
+%button-nlbr
+  +border-radius(0 2px 2px 0)
+.button-nlbr
+  @extend %button-nlbr
+
+// `.buttons-group` Button groups with left and right border radius
+//
+// Styleguide 1.8.
+.buttons-group
+  display: inline-block
+  position: relative
+  vertical-align: middle
+  margin-right: $space_byte
+  .button
+    float: left
+    margin-left: -1px
+    @extend %button-nbr
+  .button:first-of-type
+    @extend %button-nrbr
+    margin-left: 0
+    margin-right: 0
+  .button:last-of-type
+    @extend %button-nlbr
+    margin-right: 0
+
+// `.buttons-group-arrow` Used to make share button
+//
+// Styleguide 1.8.1
+.buttons-group-arrow
+  > .button,
+  > .button:hover
+    &:first-of-type
+      &:before
+        content: ""
+        border-right: 1px solid $brand-grey-5
+        position: absolute
+        right: 0
+        top: -1px
+        bottom: -1px
+      &.primary
+        &:before
+          border-right-color: $brand-blue-0
+    &:last-of-type
+      border-left: 0
+      .button-icon
+        top: -3px
+
+// Button icon aligned right
+//
+// Styleguide 1.9.
+.button-icon.button-right-icon
+  margin-right: 0
+  margin-left: 2px
+
+// `.button-icon-only` Style to use the button without text
+//
+// Styleguide 1.9.1
+.button-icon-only
+  min-width: 20px
+  .button-icon
+    margin-right: 0
+
+// `.button-fluid` widthout min width can be wider
+//
+// Styleguide 1.9.1.1
+.button-fluid
+  min-width: 20px
+
+// `.buttons-block` Default button blocks are right aligned
+//
+// .buttons-block-left - Left aligned buttons
+//
+// Styleguide 1.9.2
+.buttons-block
+  width: 100%
+  display: block
+  text-align: right
+  .buttons-block-text
+    display: inline-block
+    vertical-align: middle
+    margin: 0 6px
+  > .button
+    margin-right: 6px
+    &:last-of-type
+      margin-right: 0
+.buttons-block-left
+  text-align: left
+
+
+// `.buttons-block-both` Block element used to display buttons. Right and left aligned at the same time.
+// To wrap left buttons use `.buttons-block.buttons-block-left`. And to wrap right aligned only `.buttons-block`. // **A NOTE OF CAUTION: ** This elements floats both sides is acomplised with **float**. To aboid problems with **floats** we use almost allways `overflow: hidden` or directly don't use **floats**. But in this case we need to solve the **float** problem with an extra `DIV` at the end of the blocks with the class `.cf` wich is our **clearfix** css class.
+//
+// Styleguide 1.9.4
+.buttons-block-both
+  width: 100%
+  .buttons-block
+    width: auto
+    float: right
+    > .form-unit
+      display: inline-block
+      margin-bottom: 0
+      margin-left: 5px
+      label, span
+        display: block
+    .button
+      top: -2px
+
+  .buttons-block-left
+    float: left
+    > .form-unit
+      margin-left: 0
+      margin-right: 5px
+
+// `.button-upload` Special class to style System upload button
+//
+// Styleguide 1.9.5
+.button-upload
+  input[type="file"]
+    +opacity(0)
+    position: absolute
+    top: -1px
+    right: 0
+    margin: 0
+    font-size: 23px
+    direction: ltr
+    cursor: pointer
+    width: 100%
+  .button-icon
+    left: -2px
+    margin-right: 0
+

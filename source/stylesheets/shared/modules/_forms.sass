@@ -1,0 +1,437 @@
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
+@import "compass/css3/text-shadow"
+@import "compass/css3/images"
+@import "compass/css3/opacity"
+@import "compass/css3/transition"
+@import "compass/utilities/general/clearfix"
+@import "compass/css3/box-sizing"
+
+
+$error_bg_color: $brand-softRed
+
+// Default styles for `input` and `textarea` elements
+//
+// .focus - Indicate users they are here. (:focus)
+// .disabled - Indicate users the input is disabled. (:disabled)
+// .middle - This class make smaller inputs
+// .small - Very short input
+//
+// Styleguide X.X
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="number"],
+textarea
+  +border-radius(2px)
+  +box-shadow(inset 0 2px 4px rgba(0, 0, 0, .13))
+  +input-placeholder($selector: "&")
+    color: $brand-grey-5
+  border: 1px solid $brand-grey-5
+  color: $brand-grey-0
+  width: 100%
+  min-height: 32px
+  padding: 6px 10px 6px 7px
+  &:focus, &.focus
+    outline: none
+    border-color: $brand-blue-4
+    +box-shadow(inset 0 2px 4px rgba(0, 0, 0, .16), 0 0px 6px rgba($brand-blue-4, 0.5))
+  &:disabled, &.disabled
+    +opacity(.5)
+    background-color: $brand-lightGrey-2
+    color: $brand-grey-5
+    border-color: $brand-grey-7
+    +box-shadow(inset 0 2px 4px rgba(0, 0, 0, .05))
+  &.middle
+    min-height: 28px
+    padding-top: 3px
+    padding-bottom: 3px
+
+input[type="search"]
+  +box-sizing(border-box)
+
+textarea
+  resize: vertical
+
+// Default styles for `select` elements
+//
+// .focus - Indicate users they are here. (:focus)
+//
+// Styleguide X.X
+select
+  padding: 0 0 0 6px
+  color: $brand-grey-0
+  max-width: 260px
+  &:focus, &.focus
+    outline: none
+  option:hover
+    background-color: $brand-blue-4
+
+%check_radio
+  border: 0
+  margin: 0 6px 0 0
+  display: inline-block
+  +border-radius(0)
+
+// Default styles for `checkbox` elements. Checkbox elements must always go inside a `label`
+//
+// Styleguide x.x
+input[type="checkbox"]
+  @extend %check_radio
+
+// Default styles for `checkbox` elements. Checkbox elements must always go inside a `label`
+//
+// Styleguide x.x
+input[type="radio"]
+  @extend %check_radio
+  margin-top: -3px
+
+%label_legend
+  color: $brand-grey-4
+  font-size: 13px
+  line-height: 18px
+  width: 100%
+  margin: 0 0 $space_byte 0
+  display: inline-block
+  font-weight: $open_sans_weight_normal
+  position: relative
+  em
+    display: none
+
+// `.pseudo-label` Default styles for `label` elements. You can use with a `span` to simulate a label
+//
+// Styleguide 2.1.
+label, .pseudo-label
+  @extend %label_legend
+  .tb-icon-tooltip
+    margin: 0
+  .tooltip
+    font-weight: normal
+
+%legend_style
+  font-size: 16px
+  color: $brand-grey-1
+  padding: 0
+  margin: 0
+  font-weight: 700
+  span
+    font-weight: normal
+
+fieldset
+  padding: 5px 0 0 0
+  margin: 0 0 $space_giga_byte
+legend
+  @extend %legend_style
+  margin: 0 0 4px
+
+// This is the style for `.pseudo-label`. This is used for simulate a label style with legend.
+//
+// Styleguide 2.1.1.
+legend.pseudo-label
+  @extend %label_legend
+  margin-bottom: 0
+
+// `.tb-icon-tooltip` style for [?] icon in labels for example.
+//
+// Styleguide 2.2
+.tb-icon-tooltip
+  color: $brand-grey-5
+  display: inline-block
+  vertical-align: baseline
+
+
+// `.form-unit` Wrapper `div` for form fields (`input`, `textarea`, `checkbox`, `radio` or `select`)
+//
+// .is-required - Indicate field is required
+// .form-unit-alone - The parent take care of vertical spacing
+// .form-unit-tiny - Tiny field
+// .form-unit-small - Short field
+// .form-unit-medium - Medium field
+// .form-unit-without-label - helper class to let know descendant this field go with out label.
+// .form-unit-with-icon - helper class to let know descendant this field go with out label.
+// .form-unit-hightligted - Hightligt field in a special way
+// .form-unit-big-text - Simulate H1 title edition in an Input field
+// .form-unit-soft-text - Lighter text
+//
+// Styleguide 2.3.
+.form-unit
+  margin-bottom: 16px
+  position: relative
+  .field-status-icon-error
+    display: none
+  .bt-input-wrapper
+    .status-icon
+      top: 9px
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="search"],
+  textarea
+    vertical-align: top
+  textarea
+    min-height: 120px
+  textarea + .field-status-icon
+    top: 6px
+    height: 24px
+  &.is-required
+    label, .pseudo-label
+      color: $brand-grey-1
+      font-weight: bold
+      &:after
+        content: "*"
+        display: inline-block
+        color: $brand-grey-1
+        font-weight: normal
+        position: relative
+        top: 2px
+        margin: 0 0 0 3px
+
+
+// `.form-unit-alone` This if for when you want a form unit alone and the parent take care of spacing
+//
+// Styleguide x.x.
+.form-unit-alone
+  margin-bottom: 0
+
+.form-unit-tiny
+  max-width: 50px
+
+.form-unit-small
+  max-width: 100px
+
+.form-unit-medium
+  max-width: 160px
+
+.form-unit-without-label
+  label, .pseudo-label
+    display: none
+  .field-status-icon
+    top: 7px
+.form-unit-with-icon
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="search"]
+    padding-right: 25px
+
+.form-unit-hightligted
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="search"],
+  textarea
+    background-color: $edit-field-yellow
+
+.form-unit-soft-text
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="search"],
+  textarea
+    color: $brand-grey-5
+
+.form-unit-big-text
+  input[type="text"]
+    font-size: $font_size_big
+    font-weight: 700
+    max-height: 32px
+
+// `.field-error-message` Error field status
+//
+// Styleguide 2.3.1
+.field-error-message
+  width: 100%
+  display: block
+  color: $brand-red-1
+  margin-top: 5px
+  font-style: italic
+
+
+// `.input-element` this element go inside `.element-input-wrap`. In general is user to wrap a button
+//
+// .input-element-auto - button iside this element has with auto
+// .input-element-left - Left aligned element
+//
+// Styleguide x.x
+$min_width_element: 110px
+.input-element
+  float: right
+  margin-left: -1px
+  text-align: center
+  .action-icon
+    cursor: pointer
+    color: $brand-grey-3
+    line-height: 32px
+    margin-left: $space_kilo_byte
+  select
+    position: relative
+    top: 6px
+    margin-left: $space_kilo_byte
+    min-width: 130px
+  .button
+    min-width: $min_width_element
+    margin: 0
+    cursor: pointer
+    &.button-icon-only
+      min-width: 32px
+  &.input-element-auto
+    .button
+      min-width: 20px
+
+.input-element-left
+  float: left
+  margin-right: -1px
+  margin-left: 0
+  .action-icon, select
+    margin-left: 0
+    margin-right: $space_kilo_byte
+
+// `.input-item` this element go inside `.element-input-wrap`. Is used to wrap `input`
+//
+// .input-item-left - Left aligned element
+//
+// Styleguide x.x
+.input-item
+  overflow: hidden
+  position: relative
+  .field-status-icon
+    top: 7px
+  input
+    +border-radius(2px 0 0 2px)
+
+.input-item-left
+  input
+    +border-radius(0 2px 2px 0)
+
+// `.element-input-wrap` Div to wrap an element (in general a button) with an input in the same line.
+//
+// .element-input-wrap-alone - Parent element add vetical space
+//
+// Styleguide X.X
+.element-input-wrap
+  +clearfix
+  margin-top: 6px
+.element-input-wrap-alone
+  margin-top: 0
+
+// `.form-unit-with-button` Field + button inside a `.form-unit` element.
+//
+// Styleguide 2.3.2
+.form-unit-with-button
+  label
+    margin-bottom: 0
+
+// `.form-unit-with-button-counter` This is a special case to make a counter with an input and two buttons.
+//
+// Styleguide 2.3.3
+.form-unit-with-button-counter
+  max-width: 90px
+  .input-element
+    min-width: 2px
+    .button
+      min-width: 2px
+  .element-input-wrap
+    .input-item
+      input[type="text"]
+        +border-radius(0)
+        text-align: center
+
+// `.element-input-label` Simulate button shape inside an input
+//
+// Styleguide 2.3.4
+.element-input-label
+  +teambox_button_base
+  +border-radius(2px 0px 0px 2px)
+  text-align: right
+  margin: 0
+  cursor: default
+  &:hover
+    +background-image(linear-gradient($brand-lightGrey-2, $brand-grey-7))
+    +box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.6))
+    color: $brand-grey-1
+  &.element-input-label-middle
+    @extend .button-middle
+    padding-top: 5px
+    padding-bottom: 5px
+
+// `.element-input-label-right` when is right positioned
+//
+// Styleguide 2.3.5
+.element-input-label-right
+  +border-radius(0px 2px 2px 0px)
+  text-align: left
+
+// `.form-unit.is-error` Error field status
+//
+// Styleguide 2.3.6
+.form-unit.is-error
+  .field-status-icon-error
+    display: block
+    cursor: pointer
+  input[type="text"],
+  input[type="checkbox"],
+  input[type="password"],
+  input[type="email"],
+  textarea
+    border-color: $brand-red-1
+    color: $brand-red-1
+    background-color: $brand-softRed
+    &:focus, &.focus
+      border-color: $brand-red-1
+      +box-shadow(inset 0 2px 4px rgba(0, 0, 0, .16), 0 0px 6px rgba($brand-red-1, 0.5) )
+    +input-placeholder($selector: "&")
+      color: $brand-red-1
+
+  label, .pseudo-label
+    color: $brand-red-1
+    em
+      color: $brand-red-1
+  &.form-unit-check-radio
+    label
+      color: $brand-grey-1
+
+
+// `.form-unit-check-radio` is a special class to wrap `radio` and `checkbox` fields.
+//
+// Styleguide 2.4.
+.form-unit-check-radio
+  label
+    width: auto
+    margin-right: 15px
+    margin-left: 0
+    margin-bottom: 0
+    cursor: pointer
+    font-weight: normal
+    text-align: left
+  input[type="radio"], input[type="checkbox"]
+    cursor: pointer
+    vertical-align: middle
+    position: relative
+    top: -1px
+  &.is-required
+    label
+      font-weight: normal
+      &:after
+        content: ""
+  &.form-unit-with-icon
+    padding-right: 30px
+    .field-status-icon
+      top: 0
+// `.form-unit-check-radio-stacked` - class for when we want checkbox and radio inputs stacked
+//
+// Styleguide 2.4.1
+.form-unit-check-radio-stacked
+  label, label.required
+    display: block
+    margin-bottom: 12px
+    margin-right: 0
+  .pseudo-label
+    margin-left: 0
+  &.form-unit-with-icon
+    position: relative
+    label
+      .field-status-icon
+        right: -20px
+
+
