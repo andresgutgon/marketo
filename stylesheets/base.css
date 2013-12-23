@@ -8495,7 +8495,7 @@ header {
   padding: 40px 0; }
   /* line 3, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
   header .web-logo {
-    background-image: url("/images/rb-logo.png");
+    background-image: url("../images/rb-logo.png");
     background-repeat: no-repeat;
     background-size: 190px 48px;
     min-height: 50px;
@@ -8508,7 +8508,7 @@ body {
 /* line 11, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
 .main {
   background-color: white;
-  background-image: url("/images/mkt-bg.jpg");
+  background-image: url("../images/mkt-bg.jpg");
   background-repeat: repeat-x;
   padding-bottom: 20px; }
 
@@ -8530,7 +8530,7 @@ footer {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   /* line 32, /Users/rbd/code/marketo/source/stylesheets/marketo/_base.sass */
   header .web-logo {
-    background-image: url("/images/rb-logo@2x.png"); } }
+    background-image: url("../images/rb-logo@2x.png"); } }
 /* line 2, /Users/rbd/code/marketo/source/stylesheets/marketo/_register_box.sass */
 .register-box {
   background-color: white;
