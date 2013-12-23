@@ -15,3 +15,17 @@
     %p.call-to-action-wrapper
       %a.button.primary.button--big{:href => '#'}
         = 'Call to action'
+    .register-box.register-box--dark.register-box--always-center
+      .register-box-header
+        How to get the discount
+      .register-box-content
+        %p= 'Put the code into a box and shake it up:'
+        .form-unit.register-box-code
+          %input{:type => 'text', :placeholder => 'Introduce your code'}
+        %p
+          = 'Simon joined Teambox in August 2013 to lead the marketing function. Prior to Teambox Simon worked for a variety of start-ups in Silicon Valley in roles spanning marketing, product '
+          %a{:href => '#'}
+            %strong
+              and operations
+        %button.button.primary.button--full-width
+          Register

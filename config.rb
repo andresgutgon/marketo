@@ -27,6 +27,7 @@ set :haml, { :ugly => true, :format => :html5 }
 # end
 with_layout :two_column do
   page "/landings/two-col/*"
+  page "index.html"
 end
 
 with_layout :one_column do

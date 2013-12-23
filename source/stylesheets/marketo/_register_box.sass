@@ -1,4 +1,4 @@
-$small_input_width: 240px
+$small_input_width: 260px
 .register-box
   background-color: white
   +border-radius(6px)
@@ -69,3 +69,13 @@ $small_input_width: 240px
         max-width: auto
     .button
       width: 100%
+  .register-box--always-center
+    p
+      text-align: center
+    .form-unit
+      input[type="text"]
+        display: inline-block
+        max-width: $small_input_width
+    .button
+      width: $small_input_width
+

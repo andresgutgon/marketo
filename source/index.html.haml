@@ -1,5 +1,14 @@
 .row
-  .small-12.large-4.columns
-    = 'foo'
-  .small-12.large-8.columns
-    = 'bar'
+  .small-12.columns
+    .example-item
+      %a{:href => "/marketo/landings/one-col/center.html"}
+        Landing One column Discount
+        = image_tag 'examples/landing-center-discount.jpg'
+    .example-item
+      %a{:href => "/marketo/landings/two-col/discount.html"}
+        Landing Two column Discount
+        = image_tag 'examples/landing-discount.jpg'
+    .example-item
+      %a{:href => "/marketo/landings/two-col/webinar.html"}
+        Landing Webinar
+        = image_tag 'examples/landing-webinar.jpg'
