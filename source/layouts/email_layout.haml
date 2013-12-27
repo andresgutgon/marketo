@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+%head
+  %meta{'http-equiv' => 'Content-Type', :content => "text/html; charset=UTF-8"}
+  :css
+    #body-style{margin: 0;padding: 0;}
+
+
+    /* Media Query styles */
+    @media only screen and (max-device-width: 480px) {
+      .content-wrapper {
+        width: 300px !important;
+      }
+
+      .post-image {
+        width: 100% !important;
+      }
+      .content-box-padding {
+        width: "#{email_padding_mobile}px !important;"
+      }
+
+      .content-box-content {
+        width: "#{email_inner_width_mobile}px !important;"
+      }
+
+      .flex-notify-footer .td-button {
+        width: 100% !important;
+      }
+      .fex-notify-footer-td {
+        display: none;
+      }
+
+      .fex-notify-footer-show-on-mobile {
+        display: block !important;
+      }
+    }
+
+%body#body-style{:style => "margin: 0;padding: 0;-webkit-text-size-adjust: 100%;"}
+  %table{:width => "100%", :bgcolor => "#ffffff", :align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :style => "background-color: #ffffff;" + email_font_family}
+    %tr
+      %td{:width => "100%", :height => "#{email_padding}", :align => "center"}
+        = '&nbsp;'
+    %tr
+      %td{:width => "100%", :height => "20", :align => "center"}
+        %table{:width => "#{email_width}", :align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0"}
+          %tr
+            %td
+              %a{:href => '#'}
+                = image_tag 'rb-logo.png', :style => "display: block;width: 197px;height: 47px;"
+    %tr
+      %td{:width => "100%", :height => "#{email_padding}", :align => "center"}
+        = '&nbsp;'
+    %tr
+      %td{:width => "100%", :align => "center"}
+        = yield
+
+    %tr
+      %td{:width => "100%", :height => "#{email_padding}", :align => "center"}
+        = '&nbsp;'
+    %tr
+      %td{:width => "100%", :height => "20", :align => "center", :bgcolor => "#{email_color_grey_background}", :style => "background-color: #{email_color_grey_background};border-top: 1px solid #EEEEEE;"}
+        %table{:width => "#{email_width}", :align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0"}
+          %tr
+            %td{:width => "100%", :height => "20", :align => "center", :colspan => "2"}
+              = '&nbsp;'
+          %tr
+            %td
+              %a{:href => '#'}
+                = image_tag 'rb-logo.png', :style => "display: block;width: 197px;height: 47px;"
+            %td{:align => "right"}
+              %a{:href => '#', :style => "display: inline-block;"}
+                = image_tag 'social-facebook-icon.png', :style => "display: block;width: 50px;height: 50px;"
+              %a{:href => '#', :style => "display: inline-block;"}
+                = image_tag 'social-twitter-icon.png', :style => "display: block;width: 50px;height: 50px;"
+              %a{:href => '#', :style => "display: inline-block;"}
+                = image_tag 'social-linkedin-icon.png', :style => "display: block;width: 50px;height: 50px;"
+              %a{:href => '#', :style => "display: inline-block;"}
+                = image_tag 'social-gplus-icon.png', :style => "display: block;width: 50px;height: 50px;"
+          %tr
+            %td{:width => "100%", :height => "10", :align => "center", :colspan => "2"}
+              = '&nbsp;'
+          %tr
+            %td{:width => "100%", :height => "20", :align => "center", :colspan => "2", :style => "#{small_text_style}color: #{soft_text_color};"}
+              = 'Profesionally cultivate one-to-one customer service with robust ideas.'
+              %br
+              %a{:href => '#', :style => "#{small_text_style}color: #{brand_blue};text-decoration: underline;"}
+                = 'Unsubscribe'
+              = 'from our newsletter.'
+          %tr
+            %td{:width => "100%", :height => "10", :align => "center", :colspan => "2"}
+              = '&nbsp;'
+
+
+
