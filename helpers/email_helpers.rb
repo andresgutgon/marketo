@@ -1,9 +1,9 @@
 module EmailHelpers
 
   PROPERTIES = {
-    :email_width => 520,
+    :email_width => 600,
     :email_padding => 30,
-    :email_width_mobile => 300,
+    :email_width_mobile => 330,
     :email_padding_mobile => 15
   }
 

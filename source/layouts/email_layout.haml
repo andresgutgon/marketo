@@ -6,32 +6,24 @@
 
 
     /* Media Query styles */
-    @media only screen and (max-device-width: 480px) {
+    @media only screen and (max-width: 480px) {
       .content-wrapper {
-        width: 300px !important;
+        width: #{email_width_mobile}px !important;
       }
-
-      .post-image {
+      .full-call-to-action,
+      .post-image-full {
         width: 100% !important;
       }
       .content-box-padding {
-        width: "#{email_padding_mobile}px !important;"
+        width: #{email_padding_mobile}px !important;
       }
-
       .content-box-content {
-        width: "#{email_inner_width_mobile}px !important;"
+        width: #{email_inner_width_mobile}px !important;
       }
-
-      .flex-notify-footer .td-button {
-        width: 100% !important;
+      .footer-logo {
+        display: none !important;
       }
-      .fex-notify-footer-td {
-        display: none;
-      }
-
-      .fex-notify-footer-show-on-mobile {
-        display: block !important;
-      }
+      .social-footer-icons {text-align: center;}
     }
 
 %body#body-style{:style => "margin: 0;padding: 0;-webkit-text-size-adjust: 100%;"}
@@ -40,54 +32,74 @@
       %td{:width => "100%", :height => "#{email_padding}", :align => "center"}
         = '&nbsp;'
     %tr
-      %td{:width => "100%", :height => "20", :align => "center"}
-        %table{:width => "#{email_width}", :align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0"}
+      %td{:width => "100%", :align => "center"}
+        %table.content-wrapper{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :style => "width: #{email_width}px;"}
           %tr
-            %td
+            %td.content-box-padding{:width => "#{email_padding}"}
+              = '&nbsp;'
+            %td.content-box-content{:width => "#{email_inner_width}"}
               %a{:href => '#'}
                 = image_tag 'rb-logo.png', :style => "display: block;width: 197px;height: 47px;"
+            %td.content-box-padding{:width => "#{email_padding}"}
+              = '&nbsp;'
     %tr
       %td{:width => "100%", :height => "#{email_padding}", :align => "center"}
         = '&nbsp;'
     %tr
       %td{:width => "100%", :align => "center"}
-        = yield
+        %table.content-wrapper{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :style => "width: #{email_width}px;"}
+          %tr
+            %td.content-box-padding{:width => "#{email_padding}"}
+              = '&nbsp;'
+            %td.content-box-content{:width => "#{email_inner_width}"}
+              = yield
+            %td.content-box-padding{:width => "#{email_padding}"}
+              = '&nbsp;'
 
     %tr
       %td{:width => "100%", :height => "#{email_padding}", :align => "center"}
         = '&nbsp;'
     %tr
       %td{:width => "100%", :height => "20", :align => "center", :bgcolor => "#{email_color_grey_background}", :style => "background-color: #{email_color_grey_background};border-top: 1px solid #EEEEEE;"}
-        %table{:width => "#{email_width}", :align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0"}
+        %table.content-wrapper{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :style => "width: #{email_width}px;"}
           %tr
-            %td{:width => "100%", :height => "20", :align => "center", :colspan => "2"}
+            %td{:width => "100%", :height => "20", :align => "center", :colspan => "3"}
               = '&nbsp;'
           %tr
-            %td
-              %a{:href => '#'}
-                = image_tag 'rb-logo.png', :style => "display: block;width: 197px;height: 47px;"
-            %td{:align => "right"}
-              %a{:href => '#', :style => "display: inline-block;"}
-                = image_tag 'social-facebook-icon.png', :style => "display: block;width: 50px;height: 50px;"
-              %a{:href => '#', :style => "display: inline-block;"}
-                = image_tag 'social-twitter-icon.png', :style => "display: block;width: 50px;height: 50px;"
-              %a{:href => '#', :style => "display: inline-block;"}
-                = image_tag 'social-linkedin-icon.png', :style => "display: block;width: 50px;height: 50px;"
-              %a{:href => '#', :style => "display: inline-block;"}
-                = image_tag 'social-gplus-icon.png', :style => "display: block;width: 50px;height: 50px;"
-          %tr
-            %td{:width => "100%", :height => "10", :align => "center", :colspan => "2"}
+            %td.content-box-padding{:width => "#{email_padding}"}
+              = '&nbsp;'
+            %td.content-box-content{:width => "#{email_inner_width}"}
+              %table{:width => "100%", :align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0"}
+                %tr
+                  %td.footer-logo
+                    %a{:href => '#'}
+                      = image_tag 'rb-logo.png', :style => "display: block;width: 197px;height: 47px;"
+                  %td.social-footer-icons{:align => "right"}
+                    %a{:href => '#', :style => "display: inline-block;"}
+                      = image_tag 'social-facebook-icon.png', :style => "display: block;width: 50px;height: 50px;"
+                    %a{:href => '#', :style => "display: inline-block;"}
+                      = image_tag 'social-twitter-icon.png', :style => "display: block;width: 50px;height: 50px;"
+                    %a{:href => '#', :style => "display: inline-block;"}
+                      = image_tag 'social-linkedin-icon.png', :style => "display: block;width: 50px;height: 50px;"
+                    %a{:href => '#', :style => "display: inline-block;"}
+                      = image_tag 'social-gplus-icon.png', :style => "display: block;width: 50px;height: 50px;"
+                %tr
+                  %td{:width => "100%", :height => "10", :align => "center", :colspan => "2"}
+                    = '&nbsp;'
+                %tr
+                  %td{:width => "100%", :height => "20", :align => "center", :colspan => "2", :style => "#{small_text_style}color: #{soft_text_color};"}
+                    = 'Profesionally cultivate one-to-one customer service with robust ideas.'
+                    %br
+                    %a{:href => '#', :style => "#{small_text_style}color: #{brand_blue};text-decoration: underline;"}
+                      = 'Unsubscribe'
+                    = 'from our newsletter.'
+
+            %td.content-box-padding{:width => "#{email_padding}"}
               = '&nbsp;'
           %tr
-            %td{:width => "100%", :height => "20", :align => "center", :colspan => "2", :style => "#{small_text_style}color: #{soft_text_color};"}
-              = 'Profesionally cultivate one-to-one customer service with robust ideas.'
-              %br
-              %a{:href => '#', :style => "#{small_text_style}color: #{brand_blue};text-decoration: underline;"}
-                = 'Unsubscribe'
-              = 'from our newsletter.'
-          %tr
-            %td{:width => "100%", :height => "10", :align => "center", :colspan => "2"}
+            %td{:width => "100%", :height => "10", :align => "center", :colspan => "3"}
               = '&nbsp;'
+
 
 
 
